@@ -11,23 +11,20 @@ reminder = ""
 # Process the Task Based on Priority and Time Sensitivity
 match priority:
     case 'high':
-        reminder = f"Reminder: '{task}' is a high priority task"
         if time_bound == 'yes':
-            reminder += " that requires immediate attention today!"
+            reminder = f"Reminder: '{task}' is a high priority task that requires immediate attention today!"
         else:
-            reminder += ". Consider completing it soon."
+            reminder = f"Reminder: '{task}' is a high priority task. Consider completing it soon."
     case 'medium':
-        reminder = f"Note: '{task}' is a medium priority task"
         if time_bound == 'yes':
-            reminder += " that requires immediate attention today!"
+            reminder = f"Reminder: '{task}' is a medium priority task that requires immediate attention today!"
         else:
-            reminder += ". You can complete it when time permits."
+            reminder = f"Reminder: '{task}' is a medium priority task. You can complete it when time permits."
     case 'low':
-        reminder = f"Note: '{task}' is a low priority task"
         if time_bound == 'yes':
-            reminder += " but still requires immediate attention today!"
+            reminder = f"Reminder: '{task}' is a low priority task but still requires immediate attention today!"
         else:
-            reminder += ". Consider completing it when you have free time."
+            reminder = f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time."
     case _:
         reminder = "Invalid priority level entered."
 
